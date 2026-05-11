@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>WMSU Dept. of Computer Science | IEEE Repository</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="navbar">
+    <div class="nav-container">
+        <div class="logo-group">
+            <div class="logo-img">
+                <!-- School Logo -->
+                <img src="img/wmsu-logo.png" alt="WMSU Logo" class="nav-logo" onerror="this.style.display='none'">
+                <!-- Department Logo -->
+                <img src="img/ccs-logo.png" alt="CCS Logo" class="nav-logo" onerror="this.style.display='none'">
+            </div>
+            <div class="brand-text">
+                <h1>WMSU Dept. of Computer Science</h1>
+                <p>IEEE Xplore Digital Repository</p>
+            </div>
+        </div>
+        <div style="display: flex; gap: 16px; align-items: center;">
+            <div class="nav-stats" id="statsCount">📚 Loading...</div>
+            <div class="theme-toggle" id="themeToggle"><i class="fas fa-moon"></i></div>
+        </div>
+    </div>
+</div>
+
+<div class="hero">
+    <div class="hero-content">
+        <h2>IEEE Research Library</h2>
+        <p>Explore peer-reviewed conference papers, journals, and technical articles from IEEE.</p>
+    </div>
+</div>
+
+<div class="container">
+    <div class="filters-section">
+        <div class="search-bar">
+            <div class="search-input-wrapper">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchInput" class="search-input" placeholder="Search by title, authors, abstract...">
+            </div>
+            <select id="yearFilter" class="filter-select">
+                <option value="">All Years</option>
+            </select>
+            <div class="multi-select" id="multiKeywordSelect">
+                <div class="multi-select-btn" id="multiSelectBtn">
+                    <i class="fas fa-tags"></i> Keywords <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="multi-select-dropdown" id="multiSelectDropdown">
+                    <div id="keywordList"></div>
+                    <div id="selectedKeywords" class="selected-keywords"></div>
+                    <button id="applyKeywords" class="apply-btn">Apply Filters</button>
+                </div>
+            </div>
+            <button id="clearFilters" class="btn-clear"><i class="fas fa-times"></i> Clear all</button>
+        </div>
+        <div id="activeFilters" class="active-filters"></div>
+    </div>
+
+    <div id="papersGrid" class="papers-grid"></div>
+    <div id="pagination" class="pagination"></div>
+</div>
+
+<!-- Footer with Logos -->
+<div class="footer">
+    <div class="footer-logos">
+        <img src="img/wmsu-logo.png" alt="WMSU" class="footer-logo" onerror="this.style.display='none'">
+        <img src="img/ccs-logo.png" alt="CCS" class="footer-logo" onerror="this.style.display='none'">
+    </div>
+    <p><i class="fas fa-copyright"></i> 2026 WMSU Department of Computer Science | IEEE Repository — All rights reserved.</p>
+</div>
+
+<!-- PDF Modal -->
+<div id="pdfModal" class="modal">
+    <div class="modal-container">
+        <div class="modal-header">
+            <h3><i class="fas fa-file-pdf"></i> <span id="modalTitle">Document Preview</span></h3>
+            <button class="close-modal" id="closeModal"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="modal-body">
+            <iframe id="pdfFrame" src=""></iframe>
+        </div>
+    </div>
+</div>
+
+<!-- Netflix-style Big Card Modal -->
+<div id="bigcardModal" class="bigcard-modal">
+    <button class="nav-arrow-big nav-arrow-left-big" id="bigPrevBtn"><i class="fas fa-chevron-left"></i></button>
+    <div class="big-card" id="bigCardContainer">
+        <button class="close-bigcard" id="closeBigCardBtn"><i class="fas fa-times"></i></button>
+        <div id="bigCardDynamicContent"></div>
+    </div>
+    <button class="nav-arrow-big nav-arrow-right-big" id="bigNextBtn"><i class="fas fa-chevron-right"></i></button>
+</div>
+
+<button class="scroll-to-top-btn" id="scrollToTopBtn">
+    <i class="fas fa-arrow-up"></i>
+</button>
+
+<script src="script.js"></script>
+</body>
+</html>

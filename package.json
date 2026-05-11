@@ -1,0 +1,13 @@
+{
+  "name": "ieee-repository",
+  "version": "1.0.0",
+  "description": "Research papers metadata extraction",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "pdf-parse": "^1.1.1"
+  }
+}
